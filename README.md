@@ -1,3 +1,5 @@
+
+
 ## Weather Prediction Web App
 
 This is a Django-based web application for weather prediction. Below are the steps to set up and run the project on your local machine.
@@ -54,5 +56,3 @@ python manage.py migrate
 Finally, start the Django development server:
   ```bash
 python manage.py runserver
-```
-You should now be able to access the web application by navigating to **http://127.0.0.1:8000/** in your browser.
