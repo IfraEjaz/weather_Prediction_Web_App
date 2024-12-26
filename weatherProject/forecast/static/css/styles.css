@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
 
+/* General Reset */
 * {
     padding: 0;
     margin: 0;
@@ -7,55 +8,146 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Body Styling */
 body {
-    background: url('../img/overcast.jpeg') center/cover no-repeat, linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-    color: #fff;
+    background-image: url("{% static 'img/overcast.jpeg' %}");
+    background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
+/* Main Container */
 main {
-    position: relative;
     display: flex;
+    flex-direction: column;
     width: 90%;
     max-width: 1200px;
-    height: 700px;
-    border-radius: 25px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    margin: auto;
     overflow: hidden;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
 }
 
+/* Side Container */
 .side-container {
+    padding: 3%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Weather Carousel */
+#weatherCarousel {
+    background: transparent !important;
+    color: white !important;
+}
+
+/* Carousel Items */
+.carousel-item {
+    background: rgba(0, 0, 0, 0.5); /* Or any desired consistent background */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Carousel Inner */
+.carousel-inner {
+    background: transparent !important;
+    color: white !important;
+}
+
+/* Text & Icons in Carousel */
+.carousel-item h2, 
+.carousel-item p, 
+.carousel-item .fas, 
+.carousel-item .bi,
+.carousel-item .historical-data ul li p,
+.carousel-item .historical-data ul li i,
+.carousel-item .d-flex div p,
+.carousel-item .d-flex div i {
+    color: white !important;
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.carousel-indicators .active {
+    background-color: white;
+}
+
+/* Navigation Controls */
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Day Stats */
+.day-stats {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
 }
 
+.day-stats__temperature {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+.day-stats__feelslike {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.day-stats_conditions {
+    list-style: none;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.day-stats_conditions li {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Search Container */
 .search-container {
     width: 100%;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ffffff;
-    padding-bottom: 8px;
-    margin-bottom: 40px;
+    padding-bottom: 1%;
+    margin-bottom: 5%;
 }
 
 .geo-input {
     all: unset;
     flex: 1;
-    margin: 0 10px;
+    margin: 0 1%;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 .geo-input::placeholder {
@@ -67,83 +159,17 @@ main {
     border: none;
     cursor: pointer;
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-.day-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+.search-container-button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.day-stats__temperature {
-    font-size: 56px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.day-stats__feelslike {
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.day-stats_conditions {
-    list-style: none;
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.day-stats_conditions li {
-    display: flex;
-    justify-content: space-between;
-}
-
-.main-container {
-    flex: 1;
-    padding: 40px;
-    position: relative;
-}
-
-.weather__primary-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.weather__location {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.weather__location-text {
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.weather__primary-stats {
-    font-size: 16px;
-    line-height: 1.8; /* Adds more space between lines */
-    margin-bottom: 80px;
-    color: #fff;
-}
-
-.weather__primary-stats span {
-    display: inline-block;
-    margin-right: 10px; /* Adds spacing between inline items */
-}
-
-.weather__primary-stats::after {
-    content: "";
-    display: block;
-    margin-top: 15px; /* Adds some spacing below the stats section */
-}
-
-
+/* Forecast */
 .forecast {
     display: flex;
     justify-content: space-between;

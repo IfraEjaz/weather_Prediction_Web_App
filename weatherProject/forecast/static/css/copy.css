@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: url("{% static 'img/overcast.jpeg' %}");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Stacks the sections vertically */
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5); /* Greyish black with 50% transparency */
+    backdrop-filter: blur(10px); /* Optional: applies a blur effect on the background */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+.side-container {
+    padding: 3%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Greyish transparent background */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.carousel {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Greyish transparent background */
+}
+
+.day-stats {
+    padding: 3%;
+    background: rgba(0, 0, 0, 0.5); /* Greyish transparent background */
+    color: white;
+    text-align: center;
+}
+
+.search-container {
+    width: 100%; /* Uses the full width of the parent */
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 1%; /* Adjusted to use percentage */
+    margin-bottom: 5%; /* Adjusted to use percentage */
+}
+
+.geo-input {
+    all: unset;
+    flex: 1;
+    margin: 0 1%;
+    color: rgba(255, 255, 255, 0.9); /* Light text with 90% opacity */
+    font-size: 1rem; /* Relative unit for scaling */
+    background: rgba(255, 255, 255, 0.1); /* Transparent background for input */
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.geo-input::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Lighter placeholder text */
+}
+
+.search-container-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.25rem; /* Relative unit */
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.search-container-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light hover effect */
+}
+
+
+.day-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%; /* Adjusted to percentage */
+}
+
+.day-stats__temperature {
+    font-size: 4rem; /* Scalable font size */
+    font-weight: 700;
+    margin-bottom: 3%; /* Adjusted to percentage */
+    color: #fff;
+}
+
+.day-stats__feelslike {
+    font-size: 1.125rem; /* Scalable font size */
+    font-weight: 300;
+    color: #fff;
+}
+
+.day-stats_conditions {
+    list-style: none;
+    width: 100%;
+    margin-top: 5%; /* Adjusted to percentage */
+    display: flex;
+    flex-direction: column;
+    gap: 2%; /* Adjusted to percentage */
+}
+
+.day-stats_conditions li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+}
+
+.weather__primary-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.weather__location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.weather__location-text {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.weather__primary-stats {
+    font-size: 16px;
+    line-height: 1.8; /* Adds more space between lines */
+    margin-bottom: 80px;
+    color: #fff;
+}
+
+.weather__primary-stats span {
+    display: inline-block;
+    margin-right: 10px; /* Adds spacing between inline items */
+}
+
+.weather__primary-stats::after {
+    content: "";
+    display: block;
+    margin-top: 15px; /* Adds some spacing below the stats section */
+}
+
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.forecast-item {
+    text-align: center;
+}
+
+.forcast-time {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.forcast-temperature {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.forcastWindText {
+    font-size: 14px;
+    font-weight: 300;
+}
+/*
+new
+*/
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #ffffff;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+
+    /* Adding shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+    .weather-icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-item {
+        /* Adds rounded corners to the carousel item */
+        border-radius: 10px;
+        /* Adds shadow with transparency and rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slightly transparent shadow */
+        background: rgba(0, 0, 0, 0.1); /* Transparent background for a subtle effect */
+    }
+    
+    

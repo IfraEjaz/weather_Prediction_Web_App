@@ -4,3 +4,7 @@ numpy
 scikit-learn
 pytz
 matplotlib
+openmeteo-requests
+requests-cache
+retry-requests
+ 
