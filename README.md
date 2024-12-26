@@ -52,7 +52,15 @@ Before running the project, set up the database by running the Django migrations
   ```bash
 python manage.py migrate
 ```
-## Step 4: Run the Development Server
+## Step 4: Set Up the Database
+Finally, start the Django development server:
+  ```bash
+python manage.py migrate
+
+```
+
+## Step 5: Run the Development Server
 Finally, start the Django development server:
   ```bash
 python manage.py runserver
+```
